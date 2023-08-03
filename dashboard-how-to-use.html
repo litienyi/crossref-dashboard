@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CrossRef Dashboard | How-to</title>
+    <title>Crossref Dashboard | How-to</title>
 
     <!--Google Fonts-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -20,7 +20,7 @@
 <body>
     <div class="nav-container">
         <div class="nav-1"><a href="index.html"> < Back to Search</a></div>
-        <div class="nav-2">CrossRef Dashboard</div>
+        <div class="nav-2"><img src="CD-logo.png" height="12px"></div>
         <ul class="nav-3">
             <li class="nav-item"><a href="dashboard-how-to-use.html">How to Use</a></li>
             <li class="nav-item"><a href="dashboard-credits.html">Credits</a></li>
@@ -35,11 +35,11 @@
     </div>  
     <div class="strip">
         <h2>At a glance</h2>
-        <p>CrossRef Dashboard is a web application intended for scholars and 
-            students. CrossRef Dashboard takes a keyword (or, for more advanced 
+        <p>Crossref Dashboard is a web application intended for scholars and 
+            students. Crossref Dashboard takes a keyword (or, for more advanced 
             users, a query string) as user input, before returning the number 
             of relevant articles distributed across Subject Areas, Publications, 
-            Publication Types, and Publication Year. The hope is that CrossRef 
+            Publication Types, and Publication Year. The hope is that Crossref 
             Dashboard would make it easy to identify the most prominent disciplines, 
             publications, and time periods to examine when conducting a literature 
             review or beginning a new research project.</p>
@@ -51,15 +51,15 @@
     </div>
     <div class="strip">
         <h2>What is Advanced Search and How to use it?</h2>
-        <p>Advanced Search allows more advanced users to submit more complex queries using CrossRef's own "/works Field Queries" and "Filters." Users can find CrossRef's original documentation <a href="https://github.com/CrossRef/rest-api-doc#works-field-queries">here</a> and <a href="https://github.com/CrossRef/rest-api-doc#filter-names">here</a>.</p>
+        <p>Advanced Search allows more advanced users to submit more complex queries using Crossref's own "/works Field Queries" and "Filters." Users can find Crossref's original documentation <a href="https://github.com/Crossref/rest-api-doc#works-field-queries">here</a> and <a href="https://github.com/Crossref/rest-api-doc#filter-names">here</a>.</p>
         <p>In order to use Advanced Search, navigate to the main page where you would normally submit queries. Click the Advanced Search button below the search bar. Once clicked, you should see a new line below the search bar that reads "Advanced Search enabled." Enter your query in the search bar and search as normal.</p>
-        <p>You need to format your Advanced Search queries exactly as they should appear after the Question Mark "?" in a CrossRef API call. 
+        <p>You need to format your Advanced Search queries exactly as they should appear after the Question Mark "?" in a Crossref API call. 
             Field Queries should take the form [Field query parameter][equal sign][query] and multiple Field Queries should be delimited using the ampersand "&". For example: <a class="code">query.bibliographic=shanghai&query.container-title=society+architectural+historians</a>. To use Filters, add "&filter="[filter][colon][value] AFTER all Field Queries; separate multiple filters and values using comma ",". For example: <a class="code">query.bibliographic=chineseness&filter=type-name:Book,type-name:Journal%20Article,has-full-text:true</a>.</p>
         <p>IMPORTANT: Even the slightest typo would prevent Advanced Search from working. If your query returns 0 results, please check your capitalization (did you enter <a class="code">type-name:journal%20article</a> instead of <a class="code">type-name:Journal%20Article</a>), punctuation (are ampersands and commas in the right place?), spacing (did you include more than 1? Spot for <a class="code">%20%20</a> instead of <a class="code">%20</a>).</p>
     </div>
     <div class="strip">
         <h2>Boolean and Verbatim Operators/Queries</h2>
-        <p>CrossRef Dashboard (as well as CrossRef itself) does not currently support Boolean and Verbatim operators/queries. For example, querying <a class="code">"chinese" AND "architecture"</a> would be equivalent to <a class="code">"chinese" OR "and" OR "architecture"</a> in your regular search engines (e.g. Google).</p>
+        <p>Crossref Dashboard (as well as Crossref itself) does not currently support Boolean and Verbatim operators/queries. For example, querying <a class="code">"chinese" AND "architecture"</a> would be equivalent to <a class="code">"chinese" OR "and" OR "architecture"</a> in your regular search engines (e.g. Google).</p>
         <p>To approximate a boolean query, one could combine multiple Field Queries. For example: <a class="code">query.title=chinese&query.bibliographic=architecture</a>.</p>
     </div>
     <div class="strip">

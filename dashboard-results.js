@@ -136,7 +136,7 @@ function createStackedBar (chartLocation, chartData, chartLegendLocation) {
 
 getCategoryName = (userQuery) => {
     $.ajax({
-        url: `https://api.crossref.org/works?${userQuery}&facet=category-name:*`,
+        url: `https://api.Crossref.org/works?${userQuery}&facet=category-name:*`,
         success: function (data) {
             window.queryResult;
             queryResult = data // caches query as queryResult
@@ -190,7 +190,7 @@ getCategoryName = (userQuery) => {
 
 getCategoryName2 = (userQuery) => {
     $.ajax({
-        url: `https://api.crossref.org/works?${userQuery}&facet=category-name:*`,
+        url: `https://api.Crossref.org/works?${userQuery}&facet=category-name:*`,
         success: function (data) {
             queryResult = data // caches query as queryResult
 
@@ -216,7 +216,7 @@ getCategoryName2 = (userQuery) => {
 
 getContainerTitle = (userQuery) => {
     $.ajax({
-        url: `https://api.crossref.org/works?${userQuery}&facet=container-title:*`,
+        url: `https://api.Crossref.org/works?${userQuery}&facet=container-title:*`,
         success: function (data) {
             queryResult = data // caches query as queryResult
 
@@ -241,7 +241,7 @@ getContainerTitle = (userQuery) => {
 
 getTypeName = (userQuery) => {
     $.ajax({
-        url: `https://api.crossref.org/works?${userQuery}&facet=type-name:*`,
+        url: `https://api.Crossref.org/works?${userQuery}&facet=type-name:*`,
         success: function (data) {
             queryResult = data // caches query as queryResult
 
@@ -267,7 +267,7 @@ getTypeName = (userQuery) => {
 
 getPublished = (userQuery) => {
     $.ajax({
-        url: `https://api.crossref.org/works?${userQuery}&facet=published:*`,
+        url: `https://api.Crossref.org/works?${userQuery}&facet=published:*`,
         success: function (data) {
             window.queryResult;
             queryResult = data // caches query as queryResult
