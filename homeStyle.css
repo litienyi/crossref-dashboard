@@ -1,0 +1,198 @@
+body {
+    font-family: IBM Plex Mono;
+    font-size: 12px;
+    line-height: 1em;
+    padding: 1em;
+}
+
+/* BIG CONTAINER -- used for spacing out children <div>s vertically */
+.big-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 95vh;
+}
+
+/* CORNER TEXT STYLE */
+
+.corner-text {
+    margin: 0;
+    vertical-align: top;
+    width: 25%;
+    /* min-width: 360px; */
+}
+
+.ct-left {
+    text-align: justify;
+    justify-content: left;
+}
+
+.ct-right {
+    text-align: justify;
+    justify-content: flex-end;
+}
+
+.ct-container {
+    margin: 0;
+    padding: 6px;
+    display: flex;
+    justify-content: space-between;
+}
+
+/* QUERY STRIP STYLE */
+.search-bar-container {
+    display: flex;
+    /* height: 100%; So that query-container takes up all remaining height*/
+    width: 50%;
+    align-self: center;
+    align-items: center;
+    justify-content: center;
+    margin: 2em;
+}
+
+.query-text-container {
+    display: block;
+    /* height: 100%; So that query-container takes up all remaining height*/
+    width: 50%;
+    align-self: center;
+    align-items: center;
+    justify-content: center;
+}
+
+input {
+    width: 100%;
+}
+
+form {
+    width: 100%;
+    display: flex;
+}
+
+.search-bar {
+    display: flex;
+    margin: 0;
+    border: 1px solid lightgray;
+    border-radius: 16px 0 0 16px;
+    padding: 8px 8px 8px 24px; 
+    font-family: IBM Plex Mono;
+    font-size: 1em;
+    &::-webkit-search-cancel-button {
+        -webkit-appearance: none;
+      }
+    &:focus {
+        z-index: 2;
+        outline-color: #5CA3E6;
+        outline-style: solid;
+        outline-width: 2px;
+        outline-offset: -2px;
+    }
+}
+
+button {
+    font-size: 1em;
+}
+
+button.search {
+    display: flex;
+    justify-content:center;
+    margin: 0;
+    width: 200px;
+    padding: 8px;
+    border-radius: 0 16px 16px 0;
+    border: 1px solid lightgray;
+    margin-left: -2px;
+    font-family: IBM Plex Mono;
+    overflow: hidden;
+    white-space: nowrap;
+    &:hover {
+        z-index: 2;
+        outline-color: #5CA3E6;
+        outline-style: solid;
+        outline-width: 2px;
+        outline-offset: -2px;
+    }
+    &:active {
+        outline-color: #5CA3E6;
+        color: #5CA3E6;
+    }
+}
+
+button.switch-search {
+    width: 200px;
+    display: flex;
+    justify-content:center;
+    align-self: center;
+    margin: 0;
+    padding: 8px;
+    border-radius: 16px;
+    border: 1px solid lightgray;
+    font-family: IBM Plex Mono;
+    overflow: hidden;
+    white-space: nowrap;
+    opacity: 25%;
+    &:hover {
+        z-index: 2;
+        outline-color: #5CA3E6;
+        outline-style: solid;
+        outline-width: 2px;
+        outline-offset: -2px;
+        opacity: 100%;
+    }
+    &:active {
+        outline-color: #5CA3E6;
+        color: #5CA3E6;
+    }
+}
+
+.vertical-stack {
+    display: flex;
+    flex-direction: column;
+    height: calc(100vh - 3em);
+    justify-content: center;
+}
+
+a {
+    color: #5CA3E6;
+}
+
+.text-below-bar {
+    text-align: center;
+    align-items: center;
+    opacity: 25%;
+    &:hover{
+        opacity: 100%;
+    }
+}
+
+.nav-container {
+    display: flex;
+    /* justify-content: space-between; */
+    position: fixed;
+    justify-content: center;
+    bottom: 0;
+    left: 0;
+    width: calc(100% - 4em);
+    border-top-width: 1px;
+    border-top-style: solid;
+    border-top-color: #C9CBCF;
+    background-color: white;
+    list-style-type: none;
+    padding: 0 2em 0 2em;
+    .nav-item {
+        display: inline;
+    }
+}
+
+ul {
+    display: flex;
+    list-style-type: none;
+    padding: 0;
+    width: 25%;
+    justify-content: space-between;
+}
+
+.logo {
+    display: flex;
+    justify-content: center;
+    margin: 2em;
+}
