@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CrossRef Parser</title>
+    
+    <!--Import jQuery-->
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+
+    <!--Google Fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&display=swap" rel="stylesheet">  
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;500;600;700&display=swap" rel="stylesheet">
+
+    <!--CSS stylesheet-->
+    <link rel="stylesheet" href="resultsStyle.css">
+
+    <!--link to script.js-->
+    <script src="dashboard-results.js"></script>
+
+    <!--import Char.js-->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="nav-container">
+        <div class="nav-1"><a href="dashboard-search.html"> < Back to Search</a></div>
+        <div class="nav-2">CrossRef Dashboard</div>
+        <ul class="nav-3">
+            <li class="nav-item"><a href="dashboard-how-to-use.html">How to Use</a></li>
+            <li class="nav-item"><a href="dashboard-credits.html">Credits</a></li>
+            <li class="nav-item"><a href="dashboard-contact.html">Contact & Connect</a></li>
+        </ul>
+    </div>
+
+    <div class="main-container">
+        <div class="bar-chart-legend-container collapsible" style="grid-area: a;">
+            <p class="chart-title">Your Query Results In <u>Subject Areas</u></p>
+            <div id="categoryNameChartContainer" class="bar-chart-container"> <!--must include this div to control chart size-->
+                <canvas id="categoryNameChart"></canvas>
+            </div>
+            <div id="categoryNameChartLegend" class="legend-container">
+            </div>
+        </div>
+        <div class="bar-chart-legend-container collapsible" style="grid-area: b;">
+            <p class="chart-title">Your Query Results In <u>Publications</u></p>
+            <div id="containerTitleChartContainer" class="bar-chart-container"> <!--must include this div to control chart size-->
+                <canvas id="containerTitleChart"></canvas>
+            </div>
+            <div id="containerTitleChartLegend" class="legend-container">
+            </div>
+        </div>
+        <div class="bar-chart-legend-container collapsible" style="grid-area: c;">
+            <p class="chart-title">Your Query Results In <u>Publication Types</u></p>
+            <div id="typeNameChartContainer" class="bar-chart-container"> <!--must include this div to control chart size-->
+                <canvas id="typeNameChart"></canvas>
+            </div>
+            <div id="typeNameChartLegend" class="legend-container">
+            </div>
+        </div>
+        <div class="bar-chart-legend-container collapsible" style="grid-area: d;">
+            <p class="chart-title">Your Query Results In <u>Publication Year</u></p>
+            <div id="PublishedChartContainer" class="bar-chart-container"> <!--must include this div to control chart size-->
+                <canvas id="PublishedChart"></canvas>
+            </div>
+            <div id="PublishedChartLegend" class="legend-container">
+            </div>
+        </div>
+    </div>
+</body>
+</html>

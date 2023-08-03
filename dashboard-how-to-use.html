@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!--Google Fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&display=swap" rel="stylesheet">  
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;500;600;700&display=swap" rel="stylesheet">
+
+    <!--CSS stylesheet-->
+    <link rel="stylesheet" href="otherStyle.css">
+
+</head>
+<body>
+    <div class="nav-container">
+        <div class="nav-1"><a href="dashboard-search.html"> < Back to Search</a></div>
+        <div class="nav-2">CrossRef Dashboard</div>
+        <ul class="nav-3">
+            <li class="nav-item"><a href="dashboard-how-to-use.html">How to Use</a></li>
+            <li class="nav-item"><a href="dashboard-credits.html">Credits</a></li>
+            <li class="nav-item"><a href="dashboard-contact.html">Contact & Connect</a></li>
+        </ul>
+    </div>
+    <h1>Have trouble using Crossref Dashboard?</h1>
+    <div class="strip">
+        <h2>Get help through email</h2>
+        <p>If you have any questions regarding Crossref Dashboard, please feel free to write to
+            litienyi@mit.edu. While you wait for a response, feel free to look for an answer to your question in the instructions below.</p>
+    </div>  
+    <div class="strip">
+        <h2>At a glance</h2>
+        <p>CrossRef Dashboard is a web application intended for scholars and 
+            students. CrossRef Dashboard takes a keyword (or, for more advanced 
+            users, a query string) as user input, before returning the number 
+            of relevant articles distributed across Subject Areas, Publications, 
+            Publication Types, and Publication Year. The hope is that CrossRef 
+            Dashboard would make it easy to identify the most prominent disciplines, 
+            publications, and time periods to examine when conducting a literature 
+            review or beginning a new research project.</p>
+    </div>
+    <div class="strip">
+        <h2>Start using</h2>
+        <p>To start using this tool, Click the < Back to Search button to navigate to the main page. 
+            Type in your search keyword. Click Submit Query</p>
+    </div>
+    <div class="strip">
+        <h2>What is Advanced Search and How to use it?</h2>
+        <p>Advanced Search allows more advanced users to submit more complex queries using CrossRef's own "/works Field Queries" and "Filters." Users can find CrossRef's original documentation <a href="https://github.com/CrossRef/rest-api-doc#works-field-queries">here</a> and <a href="https://github.com/CrossRef/rest-api-doc#filter-names">here</a>.</p>
+        <p>In order to use Advanced Search, navigate to the main page where you would normally submit queries. Click the Advanced Search button below the search bar. Once clicked, you should see a new line below the search bar that reads "Advanced Search enabled." Enter your query in the search bar and search as normal.</p>
+        <p>You need to format your Advanced Search queries exactly as they should appear after the Question Mark "?" in a CrossRef API call. 
+            Field Queries should take the form [Field query parameter][equal sign][query] and multiple Field Queries should be delimited using the ampersand "&". For example: <a class="code">query.bibliographic=shanghai&query.container-title=society+architectural+historians</a>. To use Filters, add "&filter="[filter][colon][value] AFTER all Field Queries; separate multiple filters and values using comma ",". For example: <a class="code">query.bibliographic=chineseness&filter=type-name:Book,type-name:Journal%20Article,has-full-text:true</a>.</p>
+        <p>IMPORTANT: Even the slightest typo would prevent Advanced Search from working. If your query returns 0 results, please check your capitalization (did you enter <a class="code">type-name:journal%20article</a> instead of <a class="code">type-name:Journal%20Article</a>), punctuation (are ampersands and commas in the right place?), spacing (did you include more than 1? Spot for <a class="code">%20%20</a> instead of <a class="code">%20</a>).</p>
+    </div>
+    <div class="strip">
+        <h2>Boolean and Verbatim Operators/Queries</h2>
+        <p>CrossRef Dashboard (as well as CrossRef itself) does not currently support Boolean and Verbatim operators/queries. For example, querying <a class="code">"chinese" AND "architecture"</a> would be equivalent to <a class="code">"chinese" OR "and" OR "architecture"</a> in your regular search engines (e.g. Google).</p>
+        <p>To approximate a boolean query, one could combine multiple Field Queries. For example: <a class="code">query.title=chinese&query.bibliographic=architecture</a>.</p>
+    </div>
+    <div class="strip">
+        <h2>Interacting with the Dashboard</h2>
+        <p>Submitting a query would redirect you to the Dashboard page with four automatically generated graphs.</p>
+        <p>Hover over each graph's container to see its legend and labels. The legend for each graph is hidden by default. Alternatively, hover over the graph proper to see what each bar or segment represents.</p>
+        <p>Click on each label in the legend to hide/show parts of the graph. Try tampering with it; it should be pretty intuitive.</p>
+    </div>
+    <div class="strip">
+        <h2>What's coming next?</h2>
+        <p>Hopefully, the dashboard has given you a good sense of the most prolific disciplines, publications, and time periods for your research topic. This should give you a good sense of how to scope your literature review.</p>
+        <p>Download function is currently under development. This function would allow users to download all relevant DOI numbers related to their query.</p>
+        <p>I am also preparing multiple follow-along video tutorials, which will be made publicly available on YouTube as soon as they are ready.</p>
+        <p>If you wish to see other functions, wish to be notified when these new features are available, or notice any bugs, please do not hesitate to let me know by emailing litienyi@mit.edu.</p>
+    </div>   
+</body>
+</html>
