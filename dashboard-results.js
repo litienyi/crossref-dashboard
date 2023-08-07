@@ -2,8 +2,8 @@
 
 // GET DATA
 $(document).ready(function() {
-    let userQuery = window.location.search.split(/\?userQuery./g)[1].replaceAll("%3D", "=").replaceAll("%26", "&");
-    
+    let userQuery = window.location.search.split(/\?userQuery./g)[1].replaceAll("%3D", "=").replaceAll("%26", "&").replaceAll("%3A", ":");
+    console.log(userQuery)
     // getCategoryName(userQuery);
     getCategoryName2(userQuery);
     getContainerTitle(userQuery);
@@ -15,7 +15,8 @@ $(document).ready(function() {
 
 function createStackedBar (chartLocation, chartData, chartLegendLocation) {
   Chart.defaults.font.family = "IBM Plex Mono";
-  Chart.defaults.font.size = 8;          
+  Chart.defaults.font.size = 8;
+  
   // function to add colors:
 
   myColors = [
@@ -30,6 +31,9 @@ function createStackedBar (chartLocation, chartData, chartLegendLocation) {
     dataPairs[i].backgroundColor = myColors[i % myColors.length]
     dataPairs[i].borderColor = borderColors[i % borderColors.length]
   }
+  
+  
+
   // legend plugin
             const getOrCreateLegendList = (chart, id) => {
                 const legendContainer = document.getElementById(id);
@@ -38,11 +42,11 @@ function createStackedBar (chartLocation, chartData, chartLegendLocation) {
                 if (!listContainer) {
                   listContainer = document.createElement('ul');
                   listContainer.style.display = 'grid';
-                  listContainer.style.gridTemplateColumns = '33% 33% 33%';
+                  listContainer.style.gridTemplateColumns = '20% 20% 20% 20% 20% ';
                   listContainer.style.margin = 0;
                   listContainer.style.padding = 0;
                   listContainer.style.width = "90%";
-                  listContainer.style.columnGap = "5%"
+                  listContainer.style.columnGap = "2.5%"
               
                   legendContainer.appendChild(listContainer);
                 }
@@ -113,8 +117,12 @@ function createStackedBar (chartLocation, chartData, chartLegendLocation) {
                   });
                 }
               };
-            //create chart
-        
+            
+            // Chart global defaults
+
+              //create chart
+            
+              
             new Chart(chartLocation, {
                 type: 'bar',
                 data: chartData,
@@ -147,9 +155,10 @@ function createStackedBar (chartLocation, chartData, chartLegendLocation) {
 }
 
 
+
 getCategoryName = (userQuery) => {
     $.ajax({
-        url: `https://api.Crossref.org/works?${userQuery}&facet=category-name:*`,
+        url: `https://api.crossref.org/works?${userQuery}&facet=category-name:*`,
         success: function (data) {
             window.queryResult;
             queryResult = data // caches query as queryResult
@@ -203,7 +212,7 @@ getCategoryName = (userQuery) => {
 
 getCategoryName2 = (userQuery) => {
     $.ajax({
-        url: `https://api.Crossref.org/works?${userQuery}&facet=category-name:*`,
+        url: `https://api.crossref.org/works?${userQuery}&facet=category-name:*`,
         success: function (data) {
             queryResult = data // caches query as queryResult
 
@@ -211,9 +220,13 @@ getCategoryName2 = (userQuery) => {
                 return {
                     data: [value],
                     label:  (value < 2) ? `${key} (${value} result)` : `${key} (${value} results)`,
-                    borderWidth: 1
+                    borderWidth: 1,
+                    // backgroundColor: "rgba(54, 162, 235, 0.5)"
                 };
             });
+
+            
+            //
 
             const chartLocation = document.getElementById('categoryNameChart');
             const chartData = {
@@ -229,7 +242,7 @@ getCategoryName2 = (userQuery) => {
 
 getContainerTitle = (userQuery) => {
     $.ajax({
-        url: `https://api.Crossref.org/works?${userQuery}&facet=container-title:*`,
+        url: `https://api.crossref.org/works?${userQuery}&facet=container-title:*`,
         success: function (data) {
             queryResult = data // caches query as queryResult
 
@@ -254,7 +267,7 @@ getContainerTitle = (userQuery) => {
 
 getTypeName = (userQuery) => {
     $.ajax({
-        url: `https://api.Crossref.org/works?${userQuery}&facet=type-name:*`,
+        url: `https://api.crossref.org/works?${userQuery}&facet=type-name:*`,
         success: function (data) {
             queryResult = data // caches query as queryResult
 
@@ -280,7 +293,7 @@ getTypeName = (userQuery) => {
 
 getPublished = (userQuery) => {
     $.ajax({
-        url: `https://api.Crossref.org/works?${userQuery}&facet=published:*`,
+        url: `https://api.crossref.org/works?${userQuery}&facet=published:*`,
         success: function (data) {
             window.queryResult;
             queryResult = data // caches query as queryResult
@@ -290,15 +303,6 @@ getPublished = (userQuery) => {
             
             window.categoryNameData;
             categoryNameData = Object.values(queryResult["message"]["facets"]["published"]['values'])
-
-            window.categoryNamePairs;
-            categoryNamePairs = Object.entries(queryResult["message"]["facets"]["published"]['values']).map(([key, value]) => {
-                return {
-                    data: [value],
-                    label:  (value < 2) ? `${key} (${value} result)` : `${key} (${value} results)`,
-                    borderWidth: 1
-                };
-            });
             
             //create chart
 

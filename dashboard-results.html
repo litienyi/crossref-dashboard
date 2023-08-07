@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Crossref Dashboard | Results</title>
+    <title>CrossRef Parser</title>
     
     <!--Import jQuery-->
     <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
@@ -21,14 +21,15 @@
 
     <!--link to script.js-->
     <script src="dashboard-results.js"></script>
+    <script src="code-snippets/Crossref-cursor.js"></script>
 
     <!--import Char.js-->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
     <div class="nav-container">
-        <div class="nav-1"><a href="index.html"> < Back to Search</a></div>
-        <div class="nav-2"><img src="CD-logo.png" height="12px"></div>
+        <div class="nav-1"><a href="dashboard-search.html"> < Back to Search</a></div>
+        <div class="nav-2">CrossRef Dashboard</div>
         <ul class="nav-3">
             <li class="nav-item"><a href="dashboard-how-to-use.html">How to Use</a></li>
             <li class="nav-item"><a href="dashboard-credits.html">Credits</a></li>
@@ -69,6 +70,9 @@
             <div id="PublishedChartLegend" class="legend-container">
             </div>
         </div>
+    </div>
+    <div style="display: flex; justify-content: center; margin: 0 0 2em 0">
+        <div style="display: flex"><button id="downloadTSVButton">Download query results as .tsv file</button></div>
     </div>
 </body>
 </html>

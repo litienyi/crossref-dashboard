@@ -131,7 +131,7 @@ h2 {
     "b d" auto
     "c d" auto / 1fr 1fr; 
     column-gap: 2em; 
-    margin: 5em 2em 2em 2em;
+    margin: 5em 2em 0 2em;
     height: 100%;
 }
 
@@ -155,7 +155,7 @@ h2 {
         
     }
     .nav-1 { 
-        color: #5CA3E6;
+        color: #33b5e5;
         z-index: 2;
     }
     .nav-2 {
@@ -171,3 +171,76 @@ h2 {
         padding: 0 0 0 2em;
     }
 }
+
+button {
+    display: flex;
+    justify-content:center;
+    font-size: 1em;
+    border: 1px solid lightgray;
+    font-family: IBM Plex Mono;
+    overflow: hidden;
+    white-space: nowrap;
+    margin: 0;
+    border-radius: 2em;
+    padding: 8px;
+    &:hover {
+        z-index: 2;
+        outline-color: #33b5e5;
+        outline-style: solid;
+        outline-width: 2px;
+        outline-offset: -2px;
+    }
+    &:active {
+        outline-color: #33b5e5;
+        color: #33b5e5;
+    }
+}
+
+.loaderDiv {
+    display: flex;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 10;
+    background-color: rgba(0, 0, 0, 0.9);
+    justify-content: center;
+    align-items: center;
+
+}
+
+.loaderText {
+    background: linear-gradient(to right, #33b5e5, #54a7f6, #9492f5, #ce74d9, #f650a6, #ff4a83, #ff515e, #ff6238, #ff7c2a, #ff961a, #ffb006, #ffc900);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    line-height: 2em;
+    font-size: 3em;
+    text-align: center;
+    width: 75%;
+    animation: fade 24s linear infinite;
+    &:after{
+        content: "";
+        animation: changeText 24s linear infinite;
+    }
+}
+
+@keyframes fade {
+    0% {opacity: 0}
+    12.5% {opacity: 1;}
+    25% {opacity: 0;}
+    37.5% {opacity: 1;}
+    50% {opacity: 0;}
+    62.5% {opacity: 1;}
+    75% {opacity: 0;}
+    87.5% {opacity: 1;}
+    100% {opacity: 0;}
+}
+
+@keyframes changeText {
+    12.5% {content: "We are working hard to prepare your download..."}
+    37.5% {content: "Thank you for using Crossref Dashboard!"}
+    62.5% {content: "Press Command + Option + J (on a Mac) or Control + Shift + J (on Windows) to see us working."}
+    87.5% {content: "If this is taking a long time, try refreshing this page, or narrowing your query."}
+  }
+
