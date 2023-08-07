@@ -16,7 +16,20 @@ $(document).ready(function() {
 function createStackedBar (chartLocation, chartData, chartLegendLocation) {
   Chart.defaults.font.family = "IBM Plex Mono";
   Chart.defaults.font.size = 8;          
-  
+  // function to add colors:
+
+  myColors = [
+    "#33b5e5","#8b89ed","#e53594","#ff3b4b","#ff7e00","#ffc900"
+  ]
+
+  borderColors = [
+    "#33b5e550","#8b89ed50","#e5359450","#ff3b4b50","#ff7e0050","#ffc90050"
+  ]
+
+  for (i in dataPairs) {
+    dataPairs[i].backgroundColor = myColors[i % myColors.length]
+    dataPairs[i].borderColor = borderColors[i % borderColors.length]
+  }
   // legend plugin
             const getOrCreateLegendList = (chart, id) => {
                 const legendContainer = document.getElementById(id);
@@ -297,7 +310,8 @@ getPublished = (userQuery) => {
             labels: labels,
             datasets: [{
                 label: "# of Query Results",
-                data: categoryNameData
+                data: categoryNameData,
+                backgroundColor: ["#33b5e5","#8b89ed","#e53594","#ff3b4b","#ff7e00","#ffc900"]
             }]
             };
         
